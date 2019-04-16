@@ -35,7 +35,9 @@ function init() {
 		document.querySelector('ons-toolbar .center')
 		.innerHTML = event.tabItem.getAttribute('label');
 	});
-
+	if (ons.platform.isIPhoneX()) {
+		document.documentElement.setAttribute('onsflag-iphonex-portrait', '');
+	}
 	getListaServicios();
 }
 
@@ -59,6 +61,7 @@ function getListaServicios() {
 }
 
 function getListaEventos(servicio) {
+	dspInfoServicio(servicio);
 	$("#lstEventos").html("");
 	$.soap({
 		url: "http://chronos.pitanga.uy:8080/servlet/com.pitanga.agetlistaeventos",
@@ -88,6 +91,16 @@ function getListaEventos(servicio) {
 	$("#servicios").show();
 	$("#eventos").hide();
 	$("#btnLeft").hide();
+}
+
+function dspInfoServicio(servicio) {
+	$("#lblEventoCliente").text("FABRICIO");
+	$("#lblEventoTipo").text("DESARROLLO GENEXUS");
+	$("#lblEventoEstado").text("PENDIENTE");
+	$("#lblEventoInicio").text("01/04/19");
+	$("#lblEventoFin").text("30/04/19");
+	$("#lblEventoDuracion").text("28.75hs");
+	$("#lblEventoResponsable").text("FBENITEZ");
 }
 
 function dspListaEventos(listaEventos) {

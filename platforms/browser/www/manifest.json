@@ -1,0 +1,11 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "Chronos",
+  "short_name": "Chronos",
+  "version": "io.cordova.hellocordova",
+  "description": "Chronos",
+  "author": "Pitanga",
+  "icons": [],
+  "start_url": "index.html"
+}
